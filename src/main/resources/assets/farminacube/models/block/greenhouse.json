@@ -1,0 +1,206 @@
+{
+	"textures": {
+		"0": "farminacube:blocks/sopra",
+		"particle": "minecraft:blocks/glass",
+		"glass": "minecraft:blocks/glass",
+		"glowstone": "minecraft:blocks/glowstone",
+		"stone": "minecraft:blocks/stone"
+	},
+	"elements": [
+		{
+			"name": "BOTTOM",
+			"from": [0, 0, 0],
+			"to": [16, 1, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 1], "texture": "#stone"},
+				"east": {"uv": [0, 0, 16, 1], "texture": "#stone"},
+				"south": {"uv": [0, 0, 16, 1], "texture": "#stone"},
+				"west": {"uv": [0, 0, 16, 1], "texture": "#stone"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#stone"}
+			}
+		},
+		{
+			"name": "uno_uno",
+			"from": [0, 1, 0],
+			"to": [16, 3, 1],
+			"faces": {
+				"north": {"uv": [0, 13, 16, 15], "texture": "#glass"},
+				"east": {"uv": [15, 13, 16, 15], "texture": "#glass"},
+				"west": {"uv": [0, 13, 1, 15], "texture": "#glass"},
+				"up": {"uv": [0, 12, 16, 13], "texture": "#glass"}
+			}
+		},
+		{
+			"name": "uno_due",
+			"from": [0, 1, 15],
+			"to": [16, 3, 16],
+			"faces": {
+				"east": {"uv": [0, 13, 1, 15], "texture": "#glass"},
+				"south": {"uv": [0, 13, 16, 15], "texture": "#glass"},
+				"west": {"uv": [0, 13, 1, 15], "texture": "#glass"},
+				"up": {"uv": [0, 12, 16, 13], "texture": "#glass"}
+			}
+		},
+		{
+			"name": "uno_tre",
+			"from": [0, 1, 1],
+			"to": [1, 3, 15],
+			"faces": {
+				"west": {"uv": [1, 13, 15, 15], "texture": "#glass"},
+				"up": {"uv": [2, 1, 3, 15], "texture": "#glass"}
+			}
+		},
+		{
+			"name": "uno_quattro",
+			"from": [15, 1, 1],
+			"to": [16, 3, 15],
+			"faces": {
+				"east": {"uv": [1, 13, 15, 15], "texture": "#glass"},
+				"up": {"uv": [2, 1, 3, 15], "texture": "#glass"}
+			}
+		},
+		{
+			"name": "due_uno",
+			"from": [1, 3, 1],
+			"to": [15, 5, 2],
+			"faces": {
+				"north": {"uv": [0, 13, 16, 15], "texture": "#glass"},
+				"east": {"uv": [15, 13, 16, 15], "texture": "#glass"},
+				"west": {"uv": [0, 13, 1, 15], "texture": "#glass"},
+				"up": {"uv": [0, 12, 14, 13], "texture": "#glass"}
+			}
+		},
+		{
+			"name": "due_tre",
+			"from": [1, 3, 2],
+			"to": [2, 5, 14],
+			"faces": {
+				"west": {"uv": [1, 13, 13, 15], "texture": "#glass"},
+				"up": {"uv": [2, 1, 3, 13], "texture": "#glass"}
+			}
+		},
+		{
+			"name": "due_due",
+			"from": [1, 3, 14],
+			"to": [15, 5, 15],
+			"faces": {
+				"north": {"uv": [0, 13, 16, 15], "texture": "#glass"},
+				"east": {"uv": [0, 13, 1, 15], "texture": "#glass"},
+				"south": {"uv": [0, 13, 14, 15], "texture": "#glass"},
+				"west": {"uv": [0, 13, 1, 15], "texture": "#glass"},
+				"up": {"uv": [0, 12, 14, 13], "texture": "#glass"}
+			}
+		},
+		{
+			"name": "due_quattro",
+			"from": [14, 3, 2],
+			"to": [15, 5, 14],
+			"faces": {
+				"east": {"uv": [1, 13, 13, 15], "texture": "#glass"},
+				"up": {"uv": [2, 1, 3, 13], "texture": "#glass"}
+			}
+		},
+		{
+			"name": "tre_quattro",
+			"from": [13, 5, 3],
+			"to": [14, 7, 13],
+			"faces": {
+				"east": {"uv": [1, 13, 11, 15], "texture": "#glass"},
+				"up": {"uv": [2, 1, 3, 11], "texture": "#glass"}
+			}
+		},
+		{
+			"name": "tre_due",
+			"from": [2, 5, 13],
+			"to": [14, 7, 14],
+			"faces": {
+				"north": {"uv": [0, 13, 16, 15], "texture": "#glass"},
+				"east": {"uv": [0, 13, 1, 15], "rotation": 90, "texture": "#glass"},
+				"south": {"uv": [0, 13, 12, 15], "texture": "#glass"},
+				"west": {"uv": [0, 13, 1, 15], "texture": "#glass"},
+				"up": {"uv": [0, 12, 12, 13], "texture": "#glass"}
+			}
+		},
+		{
+			"name": "tre_tre",
+			"from": [2, 5, 3],
+			"to": [3, 7, 13],
+			"faces": {
+				"west": {"uv": [1, 13, 11, 15], "texture": "#glass"},
+				"up": {"uv": [2, 1, 3, 11], "texture": "#glass"}
+			}
+		},
+		{
+			"name": "tre_uno",
+			"from": [2, 5, 2],
+			"to": [14, 7, 3],
+			"faces": {
+				"north": {"uv": [0, 13, 16, 15], "texture": "#glass"},
+				"east": {"uv": [15, 13, 16, 15], "texture": "#glass"},
+				"west": {"uv": [0, 13, 1, 15], "texture": "#glass"},
+				"up": {"uv": [0, 12, 12, 13], "texture": "#glass"}
+			}
+		},
+		{
+			"name": "TOP",
+			"from": [3, 7, 3],
+			"to": [13, 8, 13],
+			"faces": {
+				"north": {"uv": [0, 13, 16, 15], "texture": "#glass"},
+				"east": {"uv": [0, 13, 16, 15], "texture": "#glass"},
+				"south": {"uv": [0, 13, 10, 14], "texture": "#glass"},
+				"west": {"uv": [0, 13, 10, 14], "texture": "#glass"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#glass"}
+			}
+		},
+		{
+			"name": "LIGHT",
+			"from": [7, 6, 7],
+			"to": [9, 7, 9],
+			"faces": {
+				"north": {"uv": [0, 13, 13, 6], "texture": "#glowstone"},
+				"east": {"uv": [0, 6, 14, 14], "texture": "#glowstone"},
+				"south": {"uv": [0, 7, 13, 13], "texture": "#glowstone"},
+				"west": {"uv": [0, 13, 11, 7], "texture": "#glowstone"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#stone"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#glowstone"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 315, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 315, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"gui": {
+			"rotation": [90, 45, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"head": {
+			"translation": [0, 13.5, 0]
+		},
+		"fixed": {
+			"rotation": [270, 180, 0],
+			"translation": [0, 0, -9],
+			"scale": [1.25, 1.25, 1.25]
+		}
+	},
+	"groups": [
+		{
+			"name": "greenhouse",
+			"origin": [8, 8, 8],
+			"children": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+		}
+	]
+}

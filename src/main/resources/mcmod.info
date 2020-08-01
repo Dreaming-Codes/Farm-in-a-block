@@ -1,0 +1,16 @@
+[
+{
+  "modid": "farminacube",
+  "name": "Farm in a cube",
+  "description": "Farm in a cube mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://dreaming.codes",
+  "updateUrl": "",
+  "authorList": ["DreamingCodes"],
+  "credits": "MarcusKron for the idea",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
