@@ -31,8 +31,11 @@ public class GreenhouseItem extends Item {
         if (worldIn.getBlockState(pos.down()).getBlock() == Block.getBlockFromName("minecraft:farmland")) {
             System.out.println(player + "used greenhouse on" + seed);
             NBTUtil.writeBlockState(player.getHeldItem(hand).getTagCompound(), seed);
-        }else if(NBTUtil.readBlockState(player.getHeldItem(hand).getTagCompound()) != null & worldIn.getBlockState(pos.up()) != null){
+        }else if(NBTUtil.readBlockState(player.getHeldItem(hand).getTagCompound()) != null & worldIn.getBlockState(pos.up()) != null & NBTUtil.readBlockState(player.getHeldItem(hand).getTagCompound()).getBlock() != Block.getBlockFromName("minecraft:air")){
             worldIn.setBlockState(pos.up(), NBTUtil.readBlockState(player.getHeldItem(hand).getTagCompound()));
+            if(!player.isCreative()){
+                player.getHeldItem(hand).setCount(0);
+            }
         }
         return super.onItemUse(player, worldIn, pos, hand, facing, hitX, hitY, hitZ);
     }
