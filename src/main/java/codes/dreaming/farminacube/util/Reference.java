@@ -1,7 +1,5 @@
 package codes.dreaming.farminacube.util;
 
-import codes.dreaming.farminacube.proxy.CommonProxy;
-
 public class Reference {
 
     public static final String MOD_ID = "farminacube";

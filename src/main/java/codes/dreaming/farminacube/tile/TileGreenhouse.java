@@ -4,6 +4,6 @@ import net.minecraft.item.ItemStack;
 import codes.dreaming.farminacube.base.BaseTileTicking;
 
 public class TileGreenhouse extends BaseTileTicking {
-    protected ItemStack sapling = ItemStack.EMPTY;
+    protected ItemStack seed = ItemStack.EMPTY;
     protected double progress = 0;
 }

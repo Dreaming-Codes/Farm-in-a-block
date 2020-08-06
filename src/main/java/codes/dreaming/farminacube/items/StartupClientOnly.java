@@ -8,10 +8,4 @@ public class StartupClientOnly {
         ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("farminablock:greenhouse", "normal");
         ModelLoader.setCustomModelResourceLocation(StartupCommon.greenhouseItem, 0, itemModelResourceLocation);
     }
-
-    public static void initClientOnly(){
-    }
-
-    public static void postInitClientOnly(){
-    }
 }

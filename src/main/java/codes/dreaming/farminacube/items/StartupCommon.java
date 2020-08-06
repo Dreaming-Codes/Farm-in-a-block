@@ -9,8 +9,4 @@ public class StartupCommon {
         greenhouseItem.setRegistryName("greenhouse");
         ForgeRegistries.ITEMS.register(greenhouseItem);
     }
-    public static void initCommon(){
-    }
-    public static void postInitCommon(){
-    }
 }
