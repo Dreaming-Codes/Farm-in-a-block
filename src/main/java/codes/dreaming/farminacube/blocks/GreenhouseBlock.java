@@ -79,7 +79,7 @@ public class GreenhouseBlock extends BaseBlockWithTile<TileGreenhouse> implement
     @Nullable
     @Override
     public TileEntity createTileEntity(World world, IBlockState state) {
-        return null;
+        return new TileGreenhouse();
     }
 
     @Override
