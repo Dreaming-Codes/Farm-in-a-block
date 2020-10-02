@@ -7,7 +7,7 @@ public class StartupCommon
 
     public static void preInitCommon()
     {
-        greenhouseBlock = (GreenhouseBlock)(new GreenhouseBlock().setUnlocalizedName("Greenhouse"));
+        greenhouseBlock = (GreenhouseBlock)(new GreenhouseBlock().setUnlocalizedName("greenhouse"));
         greenhouseBlock.setRegistryName("greenhouse");
         ForgeRegistries.BLOCKS.register(greenhouseBlock);
     }
