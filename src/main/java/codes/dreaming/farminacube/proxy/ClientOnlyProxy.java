@@ -15,6 +15,7 @@ public class ClientOnlyProxy extends CommonProxy
     }
     public void init() {
         super.init();
+        codes.dreaming.farminacube.tile.StartupClientOnly.initClientOnly();
     }
     public void postInit() {
         super.postInit();

@@ -1,28 +1,22 @@
 package codes.dreaming.farminacube.tile;
 
-//import codes.dreaming.farminacube.network.PacketUpdateGrow;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentString;
-import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.Arrays;
 
 public class TileGreenhouse extends TileEntity implements ICapabilityProvider {
     private ItemStackHandler inventory = new ItemStackHandler(1) {
@@ -94,6 +88,26 @@ public class TileGreenhouse extends TileEntity implements ICapabilityProvider {
         readFromNBT(pkt.getNbtCompound());
 
     }
+    @SideOnly(Side.CLIENT)
+    @Override
+    public double getMaxRenderDistanceSquared()
+    {
+        final int MAXIMUM_DISTANCE_IN_BLOCKS = Minecraft.getMinecraft().gameSettings.renderDistanceChunks;
+        return MAXIMUM_DISTANCE_IN_BLOCKS * MAXIMUM_DISTANCE_IN_BLOCKS;
+    }
+    @SideOnly(Side.CLIENT)
+    @Override
+    public AxisAlignedBB getRenderBoundingBox()
+    {
+        AxisAlignedBB infiniteExample = INFINITE_EXTENT_AABB;
+
+        // our gem will stay above the block, up to 1 block higher, so our bounding box is from [x,y,z] to  [x+1, y+2, z+1]
+        AxisAlignedBB aabb = new AxisAlignedBB(getPos(), getPos().add(1, 1, 1));
+        return aabb;
+    }
+    private final long INVALID_TIME = 0;
+    private long lastTime = INVALID_TIME;
+    private double lastAngularPosition;
 
     public void collideEntityItem(EntityItem item) {
 

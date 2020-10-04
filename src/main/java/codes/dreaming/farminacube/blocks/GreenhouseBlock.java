@@ -9,7 +9,10 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
@@ -26,6 +29,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
 import javax.annotation.Nullable;
@@ -143,12 +147,12 @@ public class GreenhouseBlock extends BlockContainer implements IGrowable {
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         ItemStack HandItem = playerIn.getHeldItem(hand);
         TileEntity tileentity = worldIn.getTileEntity(pos);
-        ItemStackHandler inventory = (ItemStackHandler)tileentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.UP);
-        inventory.insertItem(0, HandItem, false);
+        ItemStackHandler inventory = (ItemStackHandler)tileentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
         if(HandItem.getItem() instanceof IPlantable){
             if (!playerIn.isCreative()) {
                 HandItem.setCount(-1);
             }
+            inventory.insertItem(0, HandItem, false);
             return true;
         } else {
             System.out.println(inventory.getStackInSlot(0));
@@ -157,7 +161,14 @@ public class GreenhouseBlock extends BlockContainer implements IGrowable {
     }
     @Override
     public void breakBlock(World world, BlockPos pos, IBlockState state) {
-        super.breakBlock(world, pos, state);
+        TileEntity tileentity = world.getTileEntity(pos);
+        IItemHandler inventory = tileentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
+        ItemStack stack = inventory.getStackInSlot(0);
+        if (!stack.isEmpty()){
+            EntityItem item = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), stack);
+            world.spawnEntity(item);
+        }
         world.removeTileEntity(pos);
+        super.breakBlock(world, pos, state);
     }
 }

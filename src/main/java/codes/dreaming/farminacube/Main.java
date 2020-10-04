@@ -34,16 +34,4 @@ public class Main {
         proxy.postInit();
     }
     public static String prependModID(String name) {return Reference.MOD_ID + ":" + name;}
-
-    public static SimpleNetworkWrapper wrapper;
-    /*
-    @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
-        network = NetworkRegistry.INSTANCE.newSimpleChannel(Reference.MOD_ID);
-        network.registerMessage(new PacketUpdateGrow.Handler(), PacketUpdateGrow.class, 0, Side.CLIENT);
-        network.registerMessage(new PacketRequestUpdateGrow.Handler(), PacketRequestUpdateGrow.class, 1, Side.SERVER);
-        proxy.registerRenderers();
-    }
-
-     */
 }

@@ -9,6 +9,7 @@ public abstract class CommonProxy {
 
     public void preInit() {
         codes.dreaming.farminacube.blocks.StartupCommon.preInitCommon();
+        codes.dreaming.farminacube.tile.StartupCommon.preInitCommon();
     }
 
     public void init() {
